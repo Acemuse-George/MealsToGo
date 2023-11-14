@@ -15,6 +15,7 @@ import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurant
 import { SettingsScreen } from "./src/features/settings/screens/settings.screen";
 import { MapScreen } from "./src/features/map/screens/map.screen";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationProvider } from "./src/services/location/location.context";
 
 const Tab = createBottomTabNavigator();
 
@@ -53,15 +54,17 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer>
-            <Tab.Navigator screenOptions={createScreenOptions}>
-              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-              <Tab.Screen name="Map" component={MapScreen} />
-              <Tab.Screen name="Settings" component={SettingsScreen} />
-            </Tab.Navigator>
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <Tab.Navigator screenOptions={createScreenOptions}>
+                <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+                <Tab.Screen name="Map" component={MapScreen} />
+                <Tab.Screen name="Settings" component={SettingsScreen} />
+              </Tab.Navigator>
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

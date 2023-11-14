@@ -10,10 +10,10 @@ export const LocationProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const onSearch = (searchKeyword) => {
+  const onSearch = (searchKeyword = "Antwerp") => {
     setIsLoading(true);
     setKeyword(searchKeyword);
-    locationRequest(searchKeyword)
+    locationRequest(searchKeyword.toLowerCase())
       .then(locationTransform)
       .then((result) => {
         setIsLoading(false);
@@ -26,7 +26,7 @@ export const LocationProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    onSearch(keyword);
+    onSearch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
