@@ -3,12 +3,11 @@ import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
+
 import { RestaurantsScreen } from "../../features/restaurants/screens/restaurants.screen";
-import { Text } from "react-native";
+import { RestaurantDetailScreen } from "../../features/restaurants/screens/restaurant-detail.screen";
 
 const RestaurantStack = createStackNavigator();
-
-const RestaurantDetailScreen = () => <Text>Restaurant Detail</Text>;
 
 export const RestaurantsNavigator = () => {
   return (
