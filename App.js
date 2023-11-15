@@ -9,8 +9,9 @@ import { ThemeProvider } from "styled-components/native";
 
 import { theme } from "./src/infrastructure/theme";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationProvider } from "./src/services/location/location.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
 import { Navigation } from "./src/infrastructure/navigation";
+import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -28,11 +29,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <LocationProvider>
-          <RestaurantsContextProvider>
-            <Navigation />
-          </RestaurantsContextProvider>
-        </LocationProvider>
+        <FavoritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantsContextProvider>
+              <Navigation />
+            </RestaurantsContextProvider>
+          </LocationContextProvider>
+        </FavoritesContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
