@@ -1,4 +1,4 @@
-import React, { useState, createContext, useRef, useEffect } from "react";
+import React, { useState, createContext, useRef } from "react";
 import {
   signOut,
   createUserWithEmailAndPassword,
