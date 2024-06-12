@@ -12,12 +12,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Search } from "../components/search.component";
 import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
-
-const RestaurantList = styled.FlatList.attrs({
-  contentContainerStyle: {
-    padding: 16,
-  },
-})``;
+import { RestaurantList } from "../components/restaurant-list.styles";
 
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
