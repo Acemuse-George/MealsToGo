@@ -11,14 +11,23 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.acemusegeorge.MealsToGo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.acemusegeorge.MealsToGo"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e521f1a5-a0f4-4313-b947-c6d04877225e"
       }
     }
   }

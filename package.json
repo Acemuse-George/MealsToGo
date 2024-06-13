@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "build:android:staging": "eas build --profile preview --platform android"
   },
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.3",
